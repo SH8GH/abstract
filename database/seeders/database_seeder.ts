@@ -1,15 +1,11 @@
-import UserFactory from '#database/factories/user_factory'
-import User from '#models/user'
 import { BaseSeeder } from '@adonisjs/lucid/seeders'
 
-export default class extends BaseSeeder {
-  async run() {
-    await User.create({
-      email: 'john@doe.com',
-      password: 'secret',
-      fullName: 'john deo',
-    })
+export default class DatabaseSeeder extends BaseSeeder {
+  private async seed(Seeder: { default: typeof BaseSeeder }) {
+    await new Seeder.default(this.client).run()
+  }
 
-    await UserFactory.createMany(5)
+  async run() {
+    await this.seed(await import('#database/seeders/user_seeder'))
   }
 }
