@@ -19,7 +19,7 @@ const inertiaConfig = defineConfig({
    */
   ssr: {
     enabled: true,
-    entrypoint: 'inertia/app/ssr.tsx',
+    entrypoint: 'resources/js/ssr.tsx',
   },
 })
 
