@@ -15,7 +15,7 @@ const dbConfig = defineConfig({
         paths: ['database/migrations'],
       },
       seeders: {
-        paths: ['database/seeders/database_seeder'],
+        paths: ['database/seeders'],
       },
     },
   },
